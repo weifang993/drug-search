@@ -1,0 +1,35 @@
+<div class="container">
+  <h2 class="text-center">Drug Search</h2>
+  <div>
+    <form id="searchForm" class="form-inline" (ngSubmit)="searchDrug()">
+      <div class="container col-md-12">          
+          <div class="form-group search">
+            <input type="text" class="form-control search" id="text" name="text" placeholder="Type drug name" [(ngModel)]="search.text" required>
+          </div>        
+          <button type="submit" class="btn btn-primary"><i class="fa fa-search"></i> Go</button>
+      </div>
+    </form>   
+    <br/><br/> <br/>       
+  </div>
+ 
+  <div class="panel-group" id="accordion">
+    <div class="panel panel-default row" *ngFor="let drug of drugList" (click)="selectDrug(drug)">
+      <div class="panel-heading col-md-12 ">
+        <div class="panel-title">
+            <div class="col-md-2">
+                <a data-toggle="collapse" data-parent="#accordion" href="#{{drug.din}}">{{drug.din}}</a>
+            </div>            
+            <div class="col-md-6">
+                {{drug.brandName}}
+            </div>
+            <div class="col-md-4">
+                {{drug.manufacturer.companyName}}
+            </div>
+        </div>
+      </div>
+      <div id="{{drug.din}}" class="panel-collapse collapse">
+        <app-drug-details [drug]="selectedDrug"></app-drug-details>              
+      </div>
+    </div>
+  </div>
+</div>

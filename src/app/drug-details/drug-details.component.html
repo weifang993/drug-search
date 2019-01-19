@@ -1,0 +1,107 @@
+<div class="container" *ngIf="drug">  
+  <!-- add some vertical space. will add to css --> 
+  <div class="col-md-12" style="height: 12px;"></div>  
+  <div class="well col-md-12">
+    <div class="container col-md-12">
+      <div class="row">
+        <div class="col-md-12">
+          <label class="col-md-5">Current Status</label>
+          <span class="col-md-7">{{drug.statuses[0].status}}</span>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-12">
+          <label class="col-md-5">Status Date </label>
+          <span class="col-md-7">{{drug.statuses[0].historyDate | date:'yyyy-MM-dd'}}</span>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-12">
+          <label class="col-md-5">DIN </label>
+          <span class="col-md-7">{{drug.din}}</span>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-12">
+          <label class="col-md-5">Class</label>
+          <span class="col-md-7">{{drug.class}}</span>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-12">
+          <label class="col-md-5">Product Name </label>
+          <span class="col-md-7">{{drug.brandName}}</span>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-12">
+          <label class="col-md-5">Company Name </label>
+          <span class="col-md-7">{{drug.manufacturer.companyName}}</span>
+        </div>        
+      </div>   
+      <div class="row">
+        <div class="col-md-12">
+          <label class="col-md-5">Dosage Form</label>
+          <span class="col-md-7">{{drug.forms[0].pharmaceuticalForm}}</span>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-12">
+          <label class="col-md-5">Schedule</label>
+          <span class="col-md-7">{{drug.schedules[0]}}</span>
+        </div>
+      </div>         
+      <div class="row">
+        <div class="col-md-12">
+          <label class="col-md-5">Route of Administration</label>
+          <span class="col-md-7">{{drug.routes[0] ? drug.routes[0].name : ""}}</span>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-12">
+          <label class="col-md-5">American Hospital Formulary Service (AHFS)</label>
+          <span class="col-md-7">{{drug.therapeuticClasses[0] ? drug.therapeuticClasses[0].ahfs : ""}} {{drug.therapeuticClasses[0] ? drug.therapeuticClasses[0].ahfsNumber : ""}}</span>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-12">
+          <label class="col-md-5">Anatomical Therapeutical Chemical (ATC)</label>
+          <span class="col-md-7">{{drug.therapeuticClasses[0] ? drug.therapeuticClasses[0].atc : ""}} {{drug.therapeuticClasses[0] ? drug.therapeuticClasses[0].atcNumber : ""}}</span>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-12">
+          <label class="col-md-5">Active Ingredient Group Number (AIG)</label>
+          <span class="col-md-7">{{drug.activeIngredientGroupNo}}</span>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-12">
+          <label class="col-md-5">Number of Active Ingredients</label>
+          <span class="col-md-7">{{drug.numbOfIngredients}}</span>
+        </div>
+      </div>      
+    </div>
+
+
+    <div class="col-md-12" *ngIf="drug.activeIngredients">
+      <table class="table table-hover">
+        <thead>
+          <tr>
+            <th>Active Ingredient</th>
+            <th>Strength</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let ingredient of drug.activeIngredients">
+            <td>{{ingredient.name}}</td>
+            <td>{{ingredient.strength}}{{ingredient.strengthUnit}}</td>
+          </tr>
+        </tbody>
+
+      </table>
+    </div>
+  </div>
+</div>
+
+<!--button (click)="goBack()">Back</button-->

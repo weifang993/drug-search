@@ -1,16 +1,26 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
+import { DrugSearchComponent } from './drug-search/drug-search.component';
+import { DrugDetailsComponent } from './drug-details/drug-details.component';
+import { DrugDataService } from './shared/drug-data.service';
+import { FormsModule } from '@angular/forms';
+import { HttpClientModule }    from '@angular/common/http';
 import { AppComponent } from './app.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    DrugSearchComponent,
+    DrugDetailsComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    FormsModule,
+    HttpClientModule,
   ],
-  providers: [],
+  providers: [
+    DrugDataService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
