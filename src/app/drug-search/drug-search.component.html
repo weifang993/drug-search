@@ -3,8 +3,8 @@
   <div>
     <form id="searchForm" class="form-inline" (ngSubmit)="searchDrug()">
       <div class="container col-md-12">          
-          <div class="form-group search">
-            <input type="text" class="form-control search" id="text" name="text" placeholder="Type drug name" [(ngModel)]="search.text" required>
+          <div class="form-group col-md-11">
+            <input type="text" class="form-control search" id="text" name="text" placeholder="Drug name such as 'cold' or 'fever'" [(ngModel)]="search.text" required>
           </div>        
           <button type="submit" class="btn btn-primary"><i class="fa fa-search"></i> Go</button>
       </div>
