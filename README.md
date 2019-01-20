@@ -32,8 +32,14 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 To build docker image,
 
 * `ng build --prod`
-* `docker image build -t drug-search .`
+* `[sudo] docker image build -t drug-search .`
 
 To run the docker,
 
-* `docker run -p 4500:80 --rm drug-search` 
+* `[sudo] docker run -p 4500:80 --rm drug-search` 
+
+To build docker image for local minikube,
+
+* `ng build --prod`
+* `eval $(minikube docker-env)`
+* `docker image build -t drug-search .`
