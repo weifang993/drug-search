@@ -1,34 +1,51 @@
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"
+        aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="#">
+        <img alt="Drug Search" src="../../assets/drug.png" height="25px" width="25px">
+      </a>      
+      <p class="navbar-text"><span class="header">Drug Search - Find Drugs by Brand Name</span></p>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <form class="navbar-form navbar-right" (ngSubmit)="searchDrug()">
+        <div class="form-group col-md-10">
+          <input type="text" class="form-control" id="text" name="text" placeholder="allergy, cold or fever" [(ngModel)]="search.text">
+        </div>
+        <button type="submit" class="btn btn-primary">Go</button>
+      </form>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
+
+
 <div class="container">
-  <h2 class="text-center">Drug Search</h2>
-  <div>
-    <form id="searchForm" class="form-inline" (ngSubmit)="searchDrug()">
-      <div class="container col-md-12">          
-          <div class="form-group col-md-11">
-            <input type="text" class="form-control search" id="text" name="text" placeholder="Drug name such as 'cold' or 'fever'" [(ngModel)]="search.text" required>
-          </div>        
-          <button type="submit" class="btn btn-primary"><i class="fa fa-search"></i> Go</button>
-      </div>
-    </form>   
-    <br/><br/> <br/>       
-  </div>
- 
   <div class="panel-group" id="accordion">
     <div class="panel panel-default row" *ngFor="let drug of drugList" (click)="selectDrug(drug)">
       <div class="panel-heading col-md-12 ">
         <div class="panel-title">
-            <div class="col-md-2">
-                <a data-toggle="collapse" data-parent="#accordion" href="#{{drug.din}}">{{drug.din}}</a>
-            </div>            
-            <div class="col-md-6">
-                {{drug.brandName}}
-            </div>
-            <div class="col-md-4">
-                {{drug.manufacturer.companyName}}
-            </div>
+          <div class="col-md-2">
+            <a data-toggle="collapse" data-parent="#accordion" href="#{{drug.din}}">{{drug.din}}</a>
+          </div>
+          <div class="col-md-6">
+            {{drug.brandName}}
+          </div>
+          <div class="col-md-4">
+            {{drug.manufacturer.companyName}}
+          </div>
         </div>
       </div>
       <div id="{{drug.din}}" class="panel-collapse collapse">
-        <app-drug-details [drug]="selectedDrug"></app-drug-details>              
+        <app-drug-details [drug]="selectedDrug"></app-drug-details>
       </div>
     </div>
   </div>
