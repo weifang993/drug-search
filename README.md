@@ -34,3 +34,6 @@ To build docker image,
 * `ng build --prod`
 * `docker image build -t drug-search .`
 
+To run the docker,
+
+* `docker run -p 4500:80 --rm drug-search` 
