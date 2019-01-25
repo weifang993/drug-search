@@ -11,9 +11,14 @@ export class DrugDataService {
     // for docke-compose demo
     host = 'localhost';
     port = 8080;
+    
     // for minikube demo
     //host = '192.168.99.100';
     //port = 32500;
+    
+    // for openshift test
+    //host = '...starter-us-east-1.openshiftapps.com';
+    //port = 80;
 
     constructor(private http: HttpClient) {
         this.http = http;

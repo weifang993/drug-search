@@ -43,3 +43,8 @@ To build docker image for local minikube,
 * `ng build --prod`
 * `eval $(minikube docker-env)`
 * `docker image build -t drug-search .`
+
+## Work with Openshift
+
+* `ng build --prod`
+* `npx nodeshift --strictSSL=false --dockerImage=bucharestgold/centos7-s2i-web-app --imageTag=10.x --build.env OUTPUT_DIR=dist/drug-search --expose --deploy.port=4200`
