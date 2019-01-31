@@ -34,16 +34,6 @@ export class DrugSearchComponent implements OnInit {
     });
   }
 
-  foundDrugs(){
-    /*
-    if(this.drugList && this.drugList.length > 0){
-      console.log('found drugs: ' + this.drugList.length);
-      return true;
-    }
-    return false;
-    */
-  }
-
   selectDrug(drug : Drug){
     this.selectedDrug = drug;
   }

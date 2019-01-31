@@ -46,5 +46,14 @@ To build docker image for local minikube,
 
 ## Work with Openshift
 
+* `oc login`
 * `ng build --prod`
-* `npx nodeshift --strictSSL=false --dockerImage=bucharestgold/centos7-s2i-web-app --imageTag=10.x --build.env OUTPUT_DIR=dist/drug-search --expose --deploy.port=4200`
+* `npx nodeshift --strictSSL=false --dockerImage=bucharestgold/centos7-s2i-web-app --imageTag=10.x --build.env OUTPUT_DIR=dist/drug-search --expose`
+
+## Work with Minishift
+
+* `ng build --prod`
+* `minishift oc-env`
+* `eval #(minishift oc-env)`
+* `oc login`  (developer/developer)
+* `[sudo] npx nodeshift --strictSSL=false --dockerImage=bucharestgold/centos7-s2i-web-app --imageTag=10.x --build.env OUTPUT_DIR=dist/drug-search --expose`
