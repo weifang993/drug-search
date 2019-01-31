@@ -50,7 +50,7 @@ To build docker image for local minikube,
 * `ng build --prod`
 * `npx nodeshift --strictSSL=false --dockerImage=bucharestgold/centos7-s2i-web-app --imageTag=10.x --build.env OUTPUT_DIR=dist/drug-search --expose`
 
-## Work with Minishift
+## Work with minishift
 
 * `ng build --prod`
 * `minishift oc-env`
