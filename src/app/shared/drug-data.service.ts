@@ -9,8 +9,8 @@ import { Drug } from '../shared/drug-data.model';
 
 export class DrugDataService {
     // for docke-compose demo
-    host = 'localhost';
-    port = 8080;
+    //host = 'localhost';
+    //port = 8080;
     
     // for minikube demo
     //host = '192.168.99.100';
@@ -19,6 +19,10 @@ export class DrugDataService {
     // for openshift test
     //host = '...starter-us-east-1.openshiftapps.com';
     //port = 80;
+
+    // for mnishift test
+    host = 'dpd-server-ts-myproject.192.168.99.100.nip.io';
+    port = 80;
 
     constructor(private http: HttpClient) {
         this.http = http;
