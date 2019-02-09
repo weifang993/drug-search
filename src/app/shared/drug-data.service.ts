@@ -17,7 +17,7 @@ export class DrugDataService {
     //port = 32500;
 
     // for minishift demo
-    host = 'http://dpd-server-ts-myproject.192.168.99.100.nip.io';  // take the route of the dpd-server
+    host = 'dpd-server-ts-myproject.192.168.99.100.nip.io';  // take the route of the dpd-server
     port = 80;
     
     // for openshift test
