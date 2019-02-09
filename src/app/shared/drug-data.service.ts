@@ -24,10 +24,6 @@ export class DrugDataService {
     //host = '...starter-us-east-1.openshiftapps.com';  // take the public url of dpd-server from openshift 
     //port = 80;
 
-    // for mnishift test
-    host = 'dpd-server-ts-myproject.192.168.99.100.nip.io';
-    port = 80;
-
     constructor(private http: HttpClient) {
         this.http = http;
     }

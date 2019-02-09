@@ -53,7 +53,7 @@ To build docker image for local minikube,
 ## Build and Deploy to Local Minishift
 
 * `ng build --prod`
-* `minishift oc-env`
-* `eval #(minishift oc-env)`
+* `minishift oc-env` and follow instructions to configure shell for the os
+* `eval #(minishift oc-env)` - ubuntu/linux instruction
 * `oc login`  (developer/developer)
 * `[sudo] npx nodeshift --strictSSL=false --dockerImage=bucharestgold/centos7-s2i-web-app --imageTag=10.x --build.env OUTPUT_DIR=dist/drug-search --expose`
