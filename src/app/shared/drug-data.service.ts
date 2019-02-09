@@ -15,9 +15,13 @@ export class DrugDataService {
     // for minikube demo
     //host = '192.168.99.100';
     //port = 32500;
+
+    // for minishift demo
+    host = 'dpd-server-ts-myproject.192.168.99.100.nip.io';  // take the route of the dpd-server
+    port = 80;
     
     // for openshift test
-    //host = '...starter-us-east-1.openshiftapps.com';
+    //host = '...starter-us-east-1.openshiftapps.com';  // take the public url of dpd-server from openshift 
     //port = 80;
 
     // for mnishift test

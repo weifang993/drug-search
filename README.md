@@ -27,7 +27,7 @@ Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protrac
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
 
 
-## Dockerize the application
+## Dockerize the Application
 
 To build docker image,
 
@@ -44,7 +44,16 @@ To build docker image for local minikube,
 * `eval $(minikube docker-env)`
 * `docker image build -t drug-search .`
 
-## Work with Openshift
+## Build and Deploy to Openshift on-line
+
+* `oc login`
+* `ng build --prod`
+* `npx nodeshift --strictSSL=false --dockerImage=bucharestgold/centos7-s2i-web-app --imageTag=10.x --build.env OUTPUT_DIR=dist/drug-search --expose`
+
+## Build and Deploy to Local Minishift
 
 * `ng build --prod`
-* `npx nodeshift --strictSSL=false --dockerImage=bucharestgold/centos7-s2i-web-app --imageTag=10.x --build.env OUTPUT_DIR=dist/drug-search --expose --deploy.port=4200`
+* `minishift oc-env`
+* `eval #(minishift oc-env)`
+* `oc login`  (developer/developer)
+* `[sudo] npx nodeshift --strictSSL=false --dockerImage=bucharestgold/centos7-s2i-web-app --imageTag=10.x --build.env OUTPUT_DIR=dist/drug-search --expose`
