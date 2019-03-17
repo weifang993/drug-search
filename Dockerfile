@@ -1,5 +1,7 @@
 # Dockerfile
-FROM nginx:alpine
+# FROM nginx:alpine
+# use non-root image
+FROM bitnami/nginx
 
 COPY nginx.conf /etc/nginx/nginx.conf
 
