@@ -9,12 +9,12 @@ import { Drug } from '../shared/drug-data.model';
 
 export class DrugDataService {
     // for docke-compose demo
-    //host = 'localhost';
-    //port = 8080;
+    host = 'localhost';
+    port = 8080;
     
     // for minikube demo
-    host = '192.168.99.107';
-    port = 31408;
+    //host = '192.168.99.107';
+    //port = 31408;
 
     // for minishift demo
     //host = 'dpd-server-ts-myproject.192.168.99.100.nip.io';  // take the route of the dpd-server

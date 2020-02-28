@@ -27,7 +27,6 @@ export class DrugSearchComponent implements OnInit {
   searchDrug(){ 
     this.selectedDrug = null;
     this.drugList = [];
-    console.log("search - type: " + this.search.type + " search: " + this.search.text);
 
     this.drugDataService.getDrugByBrandName(this.search.text).subscribe((drugs) => {
       this.drugList = drugs;
