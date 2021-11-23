@@ -25,11 +25,7 @@ jobs:
       - name: docker build
         run: docker build -t weifang993/drug-search .
       - name: docker login
-        uses: docker/login-action@1
-        env:
-          DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
-          DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
+        # run: echo ${{ secrets.DOCKERHUB_PASSWORD }} | docker login -u ${{ secrets.DOCKERHUB_USERNAME }} --password-stdin
+        run: docker login -u ${{ secrets.DOCKER_USERNAME }} -p ${{ secrets.DOCKER_PASSWORD }}        
       - name: docker push
-        uses: docker/cli@master
-        with:
-          args: push weifang993/drug-search
+        uses: docker push weifang993/drug-search
