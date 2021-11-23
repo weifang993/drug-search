@@ -8,22 +8,28 @@ jobs:
   build-and-publish:
     name: build and publish
     runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [14.x, 16.x]
     steps:
-      - uses: actions/checkout@master
-      - name: npm install
-        uses: actions/npm@master
+      - uses: actions/checkout@v2
+      - name: set up node and run npm
+        uses: actions/setup-node@v2
         with:
-          args: install
+          node-version: ${{ matrix.node-version }}
+      - run: npm install
+      - name: angular install
+        run: npm install -g @angular/cli
+      - name: angular build
+        run: ng build --prod 
       - name: docker build
-        uses: actions/docker/cli@master
-        with:
-          args: build -t weifang993/drug-search .
+        run: docker build -t weifang993/drug-search .
       - name: docker login
-        uses: actions/docker/login@master
+        uses: docker/login-action@1
         env:
           DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
           DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
       - name: docker push
-        uses: actions/docker/cli@master
+        uses: docker/cli@master
         with:
           args: push weifang993/drug-search
