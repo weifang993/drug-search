@@ -15,7 +15,8 @@ Run `ng generate component component-name` to generate a new component. You can 
 Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
 
 Angular upgrade note: 
-After running converter instructions from update.angular.io, run `npm install --save --legacy-peer-deps`.
+After running converter instructions from update.angular.io, run `npm install --save --legacy-peer-deps`. For a good explanation, refer to https://stackoverflow.com/questions/66239691/what-does-npm-install-legacy-peer-deps-do-exactly-when-is-it-recommended-wh. For angular 13 (latest for the moment), generate a new testApp and update package.json after comparision. Clean build at last: no longer need --legacy-peer-deps tag.
+
 
 ## Running unit tests
 
