@@ -21,7 +21,7 @@ jobs:
       - name: angular install
         run: npm install -g @angular/cli
       - name: angular build
-        run: ng build --prod 
+        run: ng build
       - name: docker build
         run: docker build -t weifang993/drug-search .
       - name: docker login
