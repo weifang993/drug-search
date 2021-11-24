@@ -18,8 +18,8 @@ jobs:
         with:
           node-version: ${{ matrix.node-version }}
       - run: npm install
-      - name: angular install
-        run: npm install -g @angular/cli
+      # - name: angular install
+      #   run: npm install -g @angular/cli
       - name: angular build
         run: ng build
       - name: docker build
