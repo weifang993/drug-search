@@ -8,9 +8,8 @@ import { Drug } from '../shared/drug-data.model';
 })
 
 export class DrugDataService {
-    // for docke-compose demo
-    host = 'localhost';
-    port = 8080;
+    // host (port 80) will be replace by tekton pipelines
+    host = 'DPD_SERVER_HOSTNAME'; 
     
     // for minikube demo
     //host = '192.168.99.107';
