@@ -1,7 +1,7 @@
 # Dockerfile
 # Reference - https://medium.com/bb-tutorials-and-thoughts/how-to-serve-angular-application-with-nginx-and-docker-3af45be5b854
 # stage1 as builder
-FROM node:12-alpine as builder
+FROM node:14-alpine as builder
 
 # copy the package.json to install dependencies
 COPY package.json package-lock.json ./
