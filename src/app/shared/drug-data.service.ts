@@ -23,6 +23,7 @@ export class DrugDataService {
     // for openshift test
     // host and port will be replace by tekton pipelines
     host = 'DPD_SERVER_HOSTNAME'; 
+    port = 80;
 
     constructor(private http: HttpClient) {
         this.http = http;
