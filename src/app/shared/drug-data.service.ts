@@ -31,7 +31,9 @@ export class DrugDataService {
 
     getDrugByBrandName(serachText: string) : Observable<Drug[]> {
         // return an Observable for a list of drugs by brand name
-        return this.http.get<Drug[]>('http://' + this.host + ':' + this.port + '/api/drugs/brand_name/' + serachText)
+        // return this.http.get<Drug[]>('http://' + this.host + ':' + this.port + '/api/drugs/brand_name/' + serachText)
+        // knative testing
+        return this.http.get<Drug[]>('https://' + this.host + ':' + this.port + '/api/drugs/brand_name/' + serachText)
     }
   
 }
