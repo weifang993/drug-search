@@ -15,7 +15,7 @@ WORKDIR /app-ui
 COPY . .
 
 # Build the project and copy the files
-RUN npm run ng build 
+RUN npm run ng build --source-map
 
 # stage2 builds the final image
 # nginx unprivileged exposes port 8080
