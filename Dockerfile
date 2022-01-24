@@ -4,7 +4,7 @@
 FROM node:14-alpine as builder
 
 # copy the package.json to install dependencies
-COPY package.json package-lock.json ./
+COPY package.json ./
 
 # Install the dependencies and make the folder
 # To anwser prompt in post install script, we need to send "N"
@@ -15,7 +15,7 @@ WORKDIR /app-ui
 COPY . .
 
 # Build the project and copy the files
-RUN npm run ng build --source-map
+RUN npm run ng build 
 
 # stage2 builds the final image
 # nginx unprivileged exposes port 8080

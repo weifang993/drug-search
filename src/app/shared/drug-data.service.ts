@@ -34,7 +34,6 @@ export class DrugDataService {
         // return this.http.get<Drug[]>('http://' + this.host + ':' + this.port + '/api/drugs/brand_name/' + serachText)
         // knative testing
         let url: string = 'https://' + this.host + ':' + this.port + '/api/drugs/brand_name/' + serachText;
-        console.log(url);
         return this.http.get<Drug[]>(url)
     }
   
