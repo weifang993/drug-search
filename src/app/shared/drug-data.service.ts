@@ -16,14 +16,9 @@ export class DrugDataService {
     getDrugByBrandName(serachText: string) : Observable<Drug[]> {
         // for openshift test
         // host and port will be replace by tekton pipelines
-        let host: string = 'DPD_SERVER_HOSTNAME'; 
         let port: number = 80;
 
-        let url: string = 'http://' + host + ':' + port + '/api/drugs/brand_name/' + serachText;
-        if( host.startsWith("http")){
-            url = host + ':' + port + '/api/drugs/brand_name/' + serachText;
-        }
-        
+        let url: string = 'HTTP_OR_HTTPS' + '://' + 'DPD_SERVER_HOSTNAME' + ':' + port + '/api/drugs/brand_name/' + serachText;        
         return this.http.get<Drug[]>(url)
     }
   
